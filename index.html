@@ -46,6 +46,23 @@
 .button:hover::before, .button:focus::before {
     transform: translate(-50%, -50%) scale(1);
 }
+.banner.style1 {
+    position: relative;
+    overflow: hidden;
+}
+.banner.style1::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('images/arka-plan.jpg') center/cover no-repeat;
+    opacity: 0.3; /* Saydamlık oranı, 0.1 ile 0.5 arası deneyebilirsiniz */
+    z-index: 0;
+}
+.banner.style1 > .content,
+.banner.style1 > .image {
+    position: relative;
+    z-index: 1;
+}
 </style>
 </head>
 
@@ -64,7 +81,7 @@
 							</ul>
 						</div>
 						<div class="image">
-							<img src="images/banner.jpg" alt="" />
+							<img src="images/banner.png" alt="" />
 						</div>
 					</section>
 
@@ -97,7 +114,7 @@
 					</section>
 
 				<!-- Four -->
-					<section class="wrapper style1 align-center">
+					<section class="wrapper style1 align-center" id="iletisim">
 						<div class="inner medium">
 							<h2>İletişim</h2>
 							<form method="POST" action="https://formsubmit.co/kokutasarim@gmail.com">
@@ -156,4 +173,44 @@ document.getElementById('tanisalimBtn').addEventListener('click', function(e) {
 });
 </script>
 </body>
+<body class="is-preload">
+    <!-- Menü Barı Başlangıç -->
+    <nav id="navbar" style="position:fixed;top:0;left:0;width:100%;background:#4d504b;box-shadow:0 2px 8px #0001;z-index:1000;padding:0;">
+    <div style="display:flex;align-items:center;justify-content:flex-start;padding:0;">
+        <div id="menuToggle" style="cursor:pointer;display:flex;flex-direction:row;align-items:center;gap:10px;width:auto;height:40px;">
+            <div style="display:flex;flex-direction:column;gap:5px;">
+                <span style="display:block;width:28px;height:4px;background:#edebeb;border-radius:2px;"></span>
+                <span style="display:block;width:28px;height:4px;background:#ede9e9;border-radius:2px;"></span>
+                <span style="display:block;width:28px;height:4px;background:#dedada;border-radius:2px;"></span>
+            </div>
+            <span style="font-size:1.1em;font-weight:600;color:#f6eeee;user-select:none;">Menü</span>
+        </div>
+    </div>
+    <!-- Açılır Menü -->
+    <div id="mobileMenu" style="display:none;position:absolute;top:60px;left:0;width:220px;background:#fff;box-shadow:0 2px 8px rgba(246, 238, 238, 0.067);z-index:1001;">
+        <ul style="list-style:none;margin:0;padding:1px 0;display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
+            <li style="width:100%;"><a href="parfümler.html" style="display:block;width:100%;padding:8px 24px;color:#222;text-decoration:none;font-weight:500;font-size:1.1em;">Parfümler</a></li>
+            <li style="width:100%;"><a href="xparfümler.html" style="display:block;width:100%;padding:8px 24px;color:#222;text-decoration:none;font-weight:500;font-size:1.1em;">X Parfümler</a></li>
+            <li style="width:100%;"><a href="#iletisim" style="display:block;width:100%;padding:8px 24px;color:#222;text-decoration:none;font-weight:500;font-size:1.1em;">İletişim</a></li>
+        </ul>
+    </div>
+</nav>
+    <div style="height:60px;"></div>
+    <script>
+    // Hamburger menü aç/kapat
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let menuOpen = false;
+    menuToggle.onclick = function() {
+        menuOpen = !menuOpen;
+        mobileMenu.style.display = menuOpen ? 'block' : 'none';
+    };
+    // Menüden bir linke tıklanınca menüyü kapat
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.onclick = () => {
+            mobileMenu.style.display = 'none';
+            menuOpen = false;
+        };
+    });
+    </script>
 </html>
