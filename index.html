@@ -69,7 +69,6 @@
             z-index: 1;
         }
 
-        /* Menü Stili */
         #navbar {
             position: fixed;
             top: 0;
@@ -91,6 +90,10 @@
             box-shadow: 0 2px 8px rgba(246, 238, 238, 0.067);
             z-index: 1001;
         }
+
+        #wrapper {
+            padding-top:0px;
+        }
     </style>
 </head>
 
@@ -101,11 +104,11 @@
         <div style="display:flex;align-items:center;justify-content:flex-start;padding:0;">
             <div id="menuToggle" style="cursor:pointer;display:flex;flex-direction:row;align-items:center;gap:10px;height:40px;">
                 <div style="display:flex;flex-direction:column;gap:5px;">
-                    <span style="width:28px;height:4px;background:#edebeb;border-radius:2px;"></span>
-                    <span style="width:28px;height:4px;background:#ede9e9;border-radius:2px;"></span>
-                    <span style="width:28px;height:4px;background:#dedada;border-radius:2px;"></span>
+                    <span style="width:20px;height:3px;background:#edebeb;border-radius:2px;"></span>
+                    <span style="width:20px;height:3px;background:#ede9e9;border-radius:2px;"></span>
+                    <span style="width:20px;height:3px;background:#dedada;border-radius:2px;"></span>
                 </div>
-                <span style="font-size:1.1em;font-weight:600;color:#f6eeee;">Menü</span>
+                <span style="font-size:1.1em;font-weight:300;color:#f6eeee;">MENÜ</span>
             </div>
         </div>
 
@@ -118,7 +121,6 @@
             </ul>
         </div>
     </nav>
-    <div style="height:60px;"></div>
 
     <!-- Wrapper -->
     <div id="wrapper" class="divided">
@@ -214,9 +216,9 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- Scroll & Menu Script -->
+    <!-- Scroll ve Menü Hover Script -->
     <script>
-        // Tanışalım butonu kaydırma
+        // Tanışalım butonuna tıklayınca kaydır
         document.getElementById('tanisalimBtn').addEventListener('click', function(e) {
             e.preventDefault();
             const target = document.getElementById('first');
@@ -224,30 +226,37 @@
             window.scrollTo({ top: y, behavior: 'smooth' });
         });
 
-        // Menü aç/kapat
+        // Menü Hover Davranışı
         const menuToggle = document.getElementById('menuToggle');
         const mobileMenu = document.getElementById('mobileMenu');
-        let menuOpen = false;
 
-        menuToggle.onclick = function () {
-            menuOpen = !menuOpen;
-            mobileMenu.style.display = menuOpen ? 'block' : 'none';
-        };
+        menuToggle.addEventListener('mouseenter', () => {
+            mobileMenu.style.display = 'block';
+        });
 
-        // Menü linklerine tıklanınca kapan
+        menuToggle.addEventListener('mouseleave', () => {
+            setTimeout(() => {
+                if (!menuToggle.matches(':hover') && !mobileMenu.matches(':hover')) {
+                    mobileMenu.style.display = 'none';
+                }
+            }, 100);
+        });
+
+        mobileMenu.addEventListener('mouseenter', () => {
+            mobileMenu.style.display = 'block';
+        });
+
+        mobileMenu.addEventListener('mouseleave', () => {
+            if (!menuToggle.matches(':hover')) {
+                mobileMenu.style.display = 'none';
+            }
+        });
+
+        // Menüdeki bağlantıya tıklanınca menü kapansın
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.onclick = () => {
                 mobileMenu.style.display = 'none';
-                menuOpen = false;
             };
-        });
-
-        // Menü dışına tıklanınca kapan
-        document.addEventListener('click', function (e) {
-            if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
-                mobileMenu.style.display = 'none';
-                menuOpen = false;
-            }
         });
     </script>
 </body>
