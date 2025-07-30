@@ -1,14 +1,13 @@
 <!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Story by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	
-        <style>
+<html lang="tr">
+<head>
+    <title>Koku Sanat | Zamansız Parfümler</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <style>
         .inner.medium input[type="text"],
         .inner.medium input[type="email"],
         .inner.medium textarea {
@@ -16,201 +15,278 @@
             margin: 0 auto;
             display: block;
         }
+
         .inner.medium textarea {
             resize: none;
         }
-    </style>
-	<style>
-.button {
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.2s cubic-bezier(.4,2,.6,1), box-shadow 0.2s;
-    z-index: 1;
-}
-.button::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 300%;
-    height: 300%;
-    background: radial-gradient(circle, #fff3 0%, transparent 70%);
-    transform: translate(-50%, -50%) scale(0);
-    transition: transform 0.4s cubic-bezier(.4,2,.6,1);
-    z-index: -1;
-}
-.button:hover, .button:focus {
-    transform: scale(1.07) rotate(-1deg);
-    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.15);
-}
-.button:hover::before, .button:focus::before {
-    transform: translate(-50%, -50%) scale(1);
-}
-.banner.style1 {
-    position: relative;
-    overflow: hidden;
-}
-.banner.style1::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: url('images/arka-plan.jpg') center/cover no-repeat;
-    opacity: 0.3; /* Saydamlık oranı, 0.1 ile 0.5 arası deneyebilirsiniz */
-    z-index: 0;
-}
-.banner.style1 > .content,
-.banner.style1 > .image {
-    position: relative;
-    z-index: 1;
-}
-</style>
+
+        .button {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s cubic-bezier(.4,2,.6,1), box-shadow 0.2s;
+            z-index: 1;
+        }
+
+        .button::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, #fff3 0%, transparent 70%);
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.4s cubic-bezier(.4,2,.6,1);
+            z-index: -1;
+        }
+
+        .button:hover, .button:focus {
+            transform: scale(1.07) rotate(-1deg);
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.15);
+        }
+
+        .button:hover::before, .button:focus::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .banner.style1 {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner.style1::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url('images/arka-plan.jpg') center/cover no-repeat;
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .banner.style1 > .content,
+        .banner.style1 > .image {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Menü Stili */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #4d504b;
+            box-shadow: 0 2px 8px #0001;
+            z-index: 1000;
+            padding: 0;
+        }
+
+        #mobileMenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 220px;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(246, 238, 238, 0.067);
+            z-index: 1001;
+        }
+    <title>Koku Sanat | Zamansız Parfümler</title>
+
+  <!-- Karakter seti ve görünüm ayarları -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- SEO -->
+  <meta name="description" content="Zamansız parfümlerle geçmişe duyusal bir yolculuk. 1920-1950 döneminin unutulmaz kokularını keşfedin." />
+  <meta name="keywords" content="koku, parfüm, nostalji, zamansız kokular, retro parfüm, vintage" />
+  <meta name="author" content="Koku Sanat" />
+
+  <!-- Sosyal medya (Open Graph) -->
+  <meta property="og:title" content="Koku Sanat | Zamansız Parfümler" />
+  <meta property="og:description" content="1920-1950 dönemine ait eşsiz kokular ve modern yorumları." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://seninsite.vercel.app/" />
+  <meta property="og:image" content="https://seninsite.vercel.app/images/preview.jpg" />
+
+  <!-- Favicon ve Apple ikonları -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/images/apple-icon.png" />
+
+  <!-- Tarayıcı Tema Rengi (mobilde etkili) -->
+  <meta name="theme-color" content="#4d504b" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
+
+  <!-- Stil dosyaları -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+  <!-- Özel font uygulaması -->
+  <style>
+    body {
+      font-family: 'Playfair Display', serif;
+    }
+  </style>
 </head>
 
-	<body class="is-preload">
-
-		<!-- Wrapper -->
-			<div id="wrapper" class="divided">
-
-				<!-- One -->
-					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
-						<div class="content">
-							<h1>Koku Sanat</h1>
-							<p class="major">Geçmiş dönemlerin unutulmaz kokuları</p>
-							<ul class="actions stacked">
-								<li><a id="tanisalimBtn" class="button big wide smooth-scroll-middle">Tanışalım</a></li>
-							</ul>
-						</div>
-						<div class="image">
-							<img src="images/banner.png" alt="" />
-						</div>
-					</section>
-
-				<!-- Two -->
-					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="first">
-						<div class="content">
-							<h2>Koku</h2>
-							<p>1920 ile 1950 yılları arasında kalan dönemi yansıtan zamansız kokular</p>
-							<ul class="actions stacked">
-								<li><a href="parfümler.html" class="button">Parfümler</a></li>
-							</ul>
-						</div>
-						<div class="image">
-							<img src="images/spotlight01.jpg" alt="" />
-						</div>
-					</section>
-
-				<!-- Three -->
-					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
-						<div class="content">
-							<h2>Koku X</h2>
-							<p>Zamansız kokuların X versiyonları</p>
-							<ul class="actions stacked">
-								<li><a href="xparfümler.html" class="button">X Parfümler</a></li>
-							</ul>
-						</div>
-						<div class="image">
-							<img src="images/spotlight02.jpg" alt="" />
-						</div>
-					</section>
-
-				<!-- Four -->
-					<section class="wrapper style1 align-center" id="iletisim">
-						<div class="inner medium">
-							<h2>İletişim</h2>
-							<form method="POST" action="https://formsubmit.co/kokutasarim@gmail.com">
-								<div class="fields">
-									<div class="field half">
-										<label for="name">İsim</label>
-										<input type="text" name="isim" id="isim" value="" />
-									</div>
-									<div class="field half">
-										<label for="email">Email</label>
-										<input type="email" name="email" id="email" value="" />
-									</div>
-									<div class="field">
-										<label for="message">Mesaj</label>
-										<textarea name="mesaj" id="mesaj" rows="6"></textarea>
-									</div>
-								</div>
-								<ul class="actions special">
-									<li><input type="submit" name="submit" id="submit" value="Gönder" /></li>
-								</ul>
-							</form>
-
-						</div>
-					</section>
-
-				<!-- Footer -->
-					<footer class="wrapper style1 align-center">
-						<div class="inner">
-							<ul class="icons">
-								<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands style2 fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-								<li><a href="#" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
-							</ul>
-							</div>
-					</footer>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-            <script>
-document.getElementById('tanisalimBtn').addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.getElementById('first');
-    const extraOffset = 60; // Gerekirse değiştir
-    const y = target.getBoundingClientRect().top + window.pageYOffset + extraOffset;
-    window.scrollTo({ top: y, behavior: 'smooth' });
-});
-</script>
-</body>
 <body class="is-preload">
-    <!-- Menü Barı Başlangıç -->
-    <nav id="navbar" style="position:fixed;top:0;left:0;width:100%;background:#4d504b;box-shadow:0 2px 8px #0001;z-index:1000;padding:0;">
-    <div style="display:flex;align-items:center;justify-content:flex-start;padding:0;">
-        <div id="menuToggle" style="cursor:pointer;display:flex;flex-direction:row;align-items:center;gap:10px;width:auto;height:40px;">
-            <div style="display:flex;flex-direction:column;gap:5px;">
-                <span style="display:block;width:28px;height:4px;background:#edebeb;border-radius:2px;"></span>
-                <span style="display:block;width:28px;height:4px;background:#ede9e9;border-radius:2px;"></span>
-                <span style="display:block;width:28px;height:4px;background:#dedada;border-radius:2px;"></span>
+
+    <!-- Menü Barı -->
+    <nav id="navbar">
+        <div style="display:flex;align-items:center;justify-content:flex-start;padding:0;">
+            <div id="menuToggle" style="cursor:pointer;display:flex;flex-direction:row;align-items:center;gap:10px;height:40px;">
+                <div style="display:flex;flex-direction:column;gap:5px;">
+                    <span style="width:28px;height:4px;background:#edebeb;border-radius:2px;"></span>
+                    <span style="width:28px;height:4px;background:#ede9e9;border-radius:2px;"></span>
+                    <span style="width:28px;height:4px;background:#dedada;border-radius:2px;"></span>
+                </div>
+                <span style="font-size:1.1em;font-weight:600;color:#f6eeee;">Menü</span>
             </div>
-            <span style="font-size:1.1em;font-weight:600;color:#f6eeee;user-select:none;">Menü</span>
         </div>
-    </div>
-    <!-- Açılır Menü -->
-    <div id="mobileMenu" style="display:none;position:absolute;top:60px;left:0;width:220px;background:#fff;box-shadow:0 2px 8px rgba(246, 238, 238, 0.067);z-index:1001;">
-        <ul style="list-style:none;margin:0;padding:1px 0;display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
-            <li style="width:100%;"><a href="parfümler.html" style="display:block;width:100%;padding:8px 24px;color:#222;text-decoration:none;font-weight:500;font-size:1.1em;">Parfümler</a></li>
-            <li style="width:100%;"><a href="xparfümler.html" style="display:block;width:100%;padding:8px 24px;color:#222;text-decoration:none;font-weight:500;font-size:1.1em;">X Parfümler</a></li>
-            <li style="width:100%;"><a href="#iletisim" style="display:block;width:100%;padding:8px 24px;color:#222;text-decoration:none;font-weight:500;font-size:1.1em;">İletişim</a></li>
-        </ul>
-    </div>
-</nav>
+
+        <!-- Açılır Menü -->
+        <div id="mobileMenu">
+            <ul style="list-style:none;margin:0;padding:10px 0;display:flex;flex-direction:column;gap:12px;">
+                <li><a href="parfümler.html" style="display:block;padding:8px 24px;color:#222;text-decoration:none;font-weight:500;font-size:1.1em;">Parfümler</a></li>
+                <li><a href="xparfümler.html" style="display:block;padding:8px 24px;color:#222;text-decoration:none;font-weight:500;font-size:1.1em;">X Parfümler</a></li>
+                <li><a href="#iletisim" style="display:block;padding:8px 24px;color:#222;text-decoration:none;font-weight:500;font-size:1.1em;">İletişim</a></li>
+            </ul>
+        </div>
+    </nav>
     <div style="height:60px;"></div>
+
+    <!-- Wrapper -->
+    <div id="wrapper" class="divided">
+
+        <!-- One -->
+        <section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+            <div class="content">
+                <h1>Koku Sanat</h1>
+                <p class="major">Geçmiş dönemlerin unutulmaz kokuları</p>
+                <ul class="actions stacked">
+                    <li><a id="tanisalimBtn" class="button big wide smooth-scroll-middle">Tanışalım</a></li>
+                </ul>
+            </div>
+            <div class="image">
+                <img src="images/banner.png" alt="" />
+            </div>
+        </section>
+
+        <!-- Two -->
+        <section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="first">
+            <div class="content">
+                <h2>Koku</h2>
+                <p>1920 ile 1950 yılları arasında kalan dönemi yansıtan zamansız kokular</p>
+                <ul class="actions stacked">
+                    <li><a href="parfümler.html" class="button">Parfümler</a></li>
+                </ul>
+            </div>
+            <div class="image">
+                <img src="images/spotlight01.jpg" alt="" />
+            </div>
+        </section>
+
+        <!-- Three -->
+        <section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
+            <div class="content">
+                <h2>Koku X</h2>
+                <p>Zamansız kokuların X versiyonları</p>
+                <ul class="actions stacked">
+                    <li><a href="xparfümler.html" class="button">X Parfümler</a></li>
+                </ul>
+            </div>
+            <div class="image">
+                <img src="images/spotlight02.jpg" alt="" />
+            </div>
+        </section>
+
+        <!-- Four -->
+        <section class="wrapper style1 align-center" id="iletisim">
+            <div class="inner medium">
+                <h2>İletişim</h2>
+                <form method="POST" action="https://formsubmit.co/kokutasarim@gmail.com">
+                    <div class="fields">
+                        <div class="field half">
+                            <label for="name">İsim</label>
+                            <input type="text" name="name" id="name" required />
+                        </div>
+                        <div class="field half">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" required />
+                        </div>
+                        <div class="field">
+                            <label for="message">Mesaj</label>
+                            <textarea name="message" id="message" rows="6" required></textarea>
+                        </div>
+                    </div>
+                    <ul class="actions special">
+                        <li><input type="submit" value="Gönder" /></li>
+                    </ul>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="wrapper style1 align-center">
+            <div class="inner">
+                <ul class="icons">
+                    <li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+                    <li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+                    <li><a href="#" class="icon brands style2 fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                    <li><a href="#" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Scroll & Menu Script -->
     <script>
-    // Hamburger menü aç/kapat
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-    let menuOpen = false;
-    menuToggle.onclick = function() {
-        menuOpen = !menuOpen;
-        mobileMenu.style.display = menuOpen ? 'block' : 'none';
-    };
-    // Menüden bir linke tıklanınca menüyü kapat
-    mobileMenu.querySelectorAll('a').forEach(link => {
-        link.onclick = () => {
-            mobileMenu.style.display = 'none';
-            menuOpen = false;
+        // Tanışalım butonu kaydırma
+        document.getElementById('tanisalimBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.getElementById('first');
+            const y = target.getBoundingClientRect().top + window.pageYOffset + 60;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        });
+
+        // Menü aç/kapat
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        let menuOpen = false;
+
+        menuToggle.onclick = function () {
+            menuOpen = !menuOpen;
+            mobileMenu.style.display = menuOpen ? 'block' : 'none';
         };
-    });
+
+        // Menü linklerine tıklanınca kapan
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.onclick = () => {
+                mobileMenu.style.display = 'none';
+                menuOpen = false;
+            };
+        });
+
+        // Menü dışına tıklanınca kapan
+        document.addEventListener('click', function (e) {
+            if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.style.display = 'none';
+                menuOpen = false;
+            }
+        });
     </script>
+</body>
 </html>
