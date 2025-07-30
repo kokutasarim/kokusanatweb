@@ -12,6 +12,20 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
+	
+        <style>
+            .inner.medium input[type="text"],
+            .inner.medium input[type="email"],
+            .inner.medium textarea {
+                width: 66.66% !important;
+                margin: 0 auto;
+                display: block;
+            }
+            .inner.medium textarea {
+                resize: none;
+            }
+        </style>
+
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -62,24 +76,24 @@
 				<!-- Four -->
 					<section class="wrapper style1 align-center">
 						<div class="inner medium">
-							<h2>Get in touch</h2>
-							<form method="post" action="#">
+							<h2>İletişim</h2>
+							<form method="post" action="mail.php">
 								<div class="fields">
 									<div class="field half">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" value="" />
+										<label for="name">İsim</label>
+										<input type="text" name="isim" id="isim" value="" />
 									</div>
 									<div class="field half">
 										<label for="email">Email</label>
 										<input type="email" name="email" id="email" value="" />
 									</div>
 									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="6"></textarea>
+										<label for="message">Mesaj</label>
+										<textarea name="mesaj" id="mesaj" rows="6"></textarea>
 									</div>
 								</div>
 								<ul class="actions special">
-									<li><input type="submit" name="submit" id="submit" value="Send Message" /></li>
+									<li><input type="submit" name="submit" id="submit" value="Gönder" /></li>
 								</ul>
 							</form>
 
@@ -96,7 +110,7 @@
 								<li><a href="#" class="icon brands style2 fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
 								<li><a href="#" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
 							</ul>
-						</div>
+							</div>
 					</footer>
 
 			</div>
