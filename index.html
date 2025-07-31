@@ -83,6 +83,39 @@
             display: inline-block !important;
         }
 
+        /* Banner section layout düzeltme */
+        .banner.style1.orient-left {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+
+        .banner .content {
+            flex: 1 !important;
+            text-align: center !important;
+        }
+
+        .banner .image {
+            flex: 1 !important;
+        }
+
+        /* Mobilde banner düzeni */
+        @media (max-width: 980px) {
+            .banner.style1.orient-left {
+                flex-direction: column !important;
+                text-align: center !important;
+            }
+            
+            .banner .content {
+                order: 1 !important;
+                margin-bottom: 2rem !important;
+            }
+            
+            .banner .image {
+                order: 2 !important;
+            }
+        }
+
         /* Spotlight resimleri kalite artırma */
         .spotlight .image img {
             image-rendering: -webkit-optimize-contrast;
