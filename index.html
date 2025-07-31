@@ -112,10 +112,19 @@
                 height: auto;
             }
             
-            /* Mobilde banner resmi daha da küçük */
+            /* Mobilde banner resmi daha da küçük ve ortalanmış */
             .banner .image img {
                 width: 70%;
                 max-width: 70%;
+                margin: 0 auto;
+                display: block;
+            }
+            
+            /* Banner resim konteynerini ortala */
+            .banner .image {
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
         }
 
