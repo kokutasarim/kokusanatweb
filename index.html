@@ -5,100 +5,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/custom.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
-    <style>
-        .inner.medium input[type="text"],
-        .inner.medium input[type="email"],
-        .inner.medium textarea {
-            width: 66.66% !important;
-            margin: 0 auto;
-            display: block;
-        }
-
-        .inner.medium textarea {
-            resize: none;
-        }
-
-        .button {
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.2s cubic-bezier(.4,2,.6,1), box-shadow 0.2s;
-            z-index: 1;
-        }
-
-        .button::before {
-            content: "";
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            width: 300%;
-            height: 300%;
-            background: radial-gradient(circle, #fff3 0%, transparent 70%);
-            transform: translate(-50%, -50%) scale(0);
-            transition: transform 0.4s cubic-bezier(.4,2,.6,1);
-            z-index: -1;
-        }
-
-        .button:hover, .button:focus {
-            transform: scale(1.07) rotate(-1deg);
-            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.15);
-        }
-
-        .button:hover::before, .button:focus::before {
-            transform: translate(-50%, -50%) scale(1);
-        }
-
-        .banner.style1 {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .banner.style1::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: url('images/arka-plan.jpg') center/cover no-repeat;
-            opacity: 0.3;
-            z-index: 0;
-        }
-
-        .banner.style1 > .content,
-        .banner.style1 > .image {
-            position: relative;
-            z-index: 1;
-        }
-
-        #navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: #4d504b;
-            box-shadow: 0 2px 8px #0001;
-            z-index: 1000;
-            padding: 0;
-        }
-
-        #mobileMenu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 220px;
-            background: #fff;
-            box-shadow: 0 2px 8px rgba(246, 238, 238, 0.067);
-            z-index: 1001;
-        }
-
-        #wrapper {
-            padding-top:0px;
-        }
-    </style>
 </head>
-
 <body class="is-preload">
-
     <!-- Menü Barı -->
     <nav id="navbar">
         <div style="display:flex;align-items:center;justify-content:flex-start;padding:0;">
@@ -110,21 +20,17 @@
                 </div>
                 <span style="font-size:1.1em;font-weight:300;color:#f6eeee;">MENÜ</span>
             </div>
-        </div>
-
-        <!-- Açılır Menü -->
-        <div id="mobileMenu">
-            <ul style="list-style:none;margin:0;padding:10px 0;display:flex;flex-direction:column;gap:12px;">
-                <li><a href="parfümler.html" style="display:block;padding:8px 24px;color:#222;text-decoration:none;font-weight:500;font-size:1.1em;">Parfümler</a></li>
-                <li><a href="xparfümler.html" style="display:block;padding:8px 24px;color:#222;text-decoration:none;font-weight:500;font-size:1.1em;">X Parfümler</a></li>
-                <li><a href="#iletisim" style="display:block;padding:8px 24px;color:#222;text-decoration:none;font-weight:500;font-size:1.1em;">İletişim</a></li>
-            </ul>
+            <div id="mobileMenu">
+                <ul style="list-style:none;margin:0;padding:10px 0;display:flex;flex-direction:column;gap:12px;">
+                    <li><a href="#first" style="display:block;padding:8px 24px;color:#4d504b;text-decoration:none;font-weight:500;font-size:1.1em;">Parfümler</a></li>
+                    <li><a href="#iletisim" style="display:block;padding:8px 24px;color:#4d504b;text-decoration:none;font-weight:500;font-size:1.1em;">İletişim</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
     <!-- Wrapper -->
     <div id="wrapper" class="divided">
-
         <!-- One -->
         <section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
             <div class="content">
