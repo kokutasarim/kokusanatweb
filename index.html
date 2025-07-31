@@ -54,6 +54,117 @@
                 transform: translateY(0);
             }
         }
+
+        /* Banner resim kalite artırma */
+        .banner .image img {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            image-rendering: pixelated;
+            filter: contrast(1.1) brightness(1.05) saturate(1.1);
+            transition: all 0.3s ease;
+            width: 80%; /* Boyutu %20 azalt */
+            height: auto;
+            max-width: 80%;
+        }
+
+        .banner .image img:hover {
+            filter: contrast(1.15) brightness(1.1) saturate(1.15);
+            transform: scale(1.02);
+        }
+
+        /* Spotlight resimleri kalite artırma */
+        .spotlight .image img {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            filter: contrast(1.08) brightness(1.03) saturate(1.08) sharpen(0.5);
+            transition: all 0.4s ease;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .spotlight .image img:hover {
+            filter: contrast(1.12) brightness(1.06) saturate(1.12) sharpen(1);
+            transform: scale(1.03) rotateY(5deg);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        /* Tüm resimlerde anti-aliasing ve yumuşatma */
+        img {
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+        }
+
+        /* Responsive resim optimizasyonu */
+        @media (min-width: 1200px) {
+            .spotlight .image img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
+        /* Mobil cihazlarda resim kalitesi */
+        @media (max-width: 768px) {
+            .spotlight .image img {
+                filter: contrast(1.05) brightness(1.02) saturate(1.05);
+                width: 100%;
+                height: auto;
+            }
+            
+            /* Mobilde banner resmi daha da küçük */
+            .banner .image img {
+                width: 70%;
+                max-width: 70%;
+            }
+        }
+
+        /* Resim yükleme efekti */
+        .spotlight .image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .spotlight .image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(212, 175, 55, 0.1), rgba(246, 238, 238, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .spotlight .image:hover::before {
+            opacity: 1;
+        }
+
+        /* Mobil görünümde menü sağa hizalama */
+        @media (max-width: 768px) {
+            #navbar > div {
+                padding: 0 10px !important;
+                justify-content: space-between !important;
+            }
+            
+            #menuToggle {
+                margin-left: auto !important;
+                margin-right: 0 !important;
+            }
+            
+            /* Logo tam sola yasla */
+            #navbar > div > div:first-child {
+                margin-right: 0 !important;
+                margin-left: 0 !important;
+            }
+            
+            /* Navbar padding'ini azalt */
+            #navbar {
+                padding: 10px 5px !important;
+            }
+        }
     </style>
 </head>
 <body class="is-preload">
@@ -92,7 +203,10 @@
                 </ul>
             </div>
             <div class="image">
-                <img src="images/banner.png" alt="" />
+                <img src="images/banner.png" 
+                     alt="Koku Sanat Banner - Zamansız Parfümler" 
+                     loading="eager"
+                     decoding="async" />
             </div>
         </section>
 
@@ -106,7 +220,10 @@
                 </ul>
             </div>
             <div class="image">
-                <img src="images/spotlight01.jpg" alt="" />
+                <img src="images/spotlight01.jpg" 
+                     alt="Koku - 1920-1950 Dönemi Zamansız Parfümler" 
+                     loading="lazy"
+                     decoding="async" />
             </div>
         </section>
 
@@ -120,7 +237,10 @@
                 </ul>
             </div>
             <div class="image">
-                <img src="images/spotlight02.jpg" alt="" />
+                <img src="images/spotlight02.jpg" 
+                     alt="Koku X - Zamansız Kokuların X Versiyonları" 
+                     loading="lazy"
+                     decoding="async" />
             </div>
         </section>
 
