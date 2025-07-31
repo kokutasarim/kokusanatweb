@@ -59,11 +59,11 @@
 <body class="is-preload">
     <!-- Menü Barı -->
     <nav id="navbar" style="position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,0,0,0.1);backdrop-filter:blur(15px);padding:15px 30px;transition:all 0.3s ease;">
-        <div style="display:flex;align-items:center;justify-content:space-between;max-width:100%;margin:0 auto;padding:0 50px;">
-            <div style="font-size:1.5em;font-weight:bold;color:#f6eeee;letter-spacing:1px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;max-width:100%;margin:0 auto;padding:0 20px;">
+            <div style="font-size:1.2em;font-weight:bold;color:#f6eeee;letter-spacing:1px;margin-right:auto;">
                 KOKU <span style="font-family:'Dancing Script', cursive;font-weight:700;">SANAT</span>
             </div>
-            <div id="menuToggle" style="cursor:pointer;display:flex;flex-direction:row;align-items:center;gap:10px;height:40px;padding:8px 20px;border-radius:8px;transition:all 0.3s ease;position:relative;">
+            <div id="menuToggle" style="cursor:pointer;display:flex;flex-direction:row;align-items:center;gap:10px;height:40px;padding:8px 20px;border-radius:8px;transition:all 0.3s ease;position:relative;margin-left:auto;">
                 <div style="display:flex;flex-direction:column;gap:4px;">
                     <span style="width:22px;height:3px;background:linear-gradient(45deg,#f6eeee,#d4af37);border-radius:2px;transition:all 0.3s ease;"></span>
                     <span style="width:22px;height:3px;background:linear-gradient(45deg,#f6eeee,#d4af37);border-radius:2px;transition:all 0.3s ease;"></span>
@@ -86,7 +86,7 @@
         <!-- One -->
         <section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right" style="padding-top:80px;">
             <div class="content">
-                <p class="major typewriter" style="font-family:'Great Vibes', cursive !important;font-size:2.2em;font-weight:normal;line-height:1.4;margin-bottom:30px;"></p>
+                <p class="major typewriter" style="font-family:'Great Vibes', cursive !important;font-size:1.8em;font-weight:normal;line-height:1.4;margin-bottom:30px;"></p>
                 <ul class="actions stacked">
                     <li><a id="tanisalimBtn" class="button big wide smooth-scroll-middle">Tanışalım</a></li>
                 </ul>
@@ -228,7 +228,7 @@
             text.split('').forEach((char, index) => {
                 const span = document.createElement('span');
                 span.textContent = char === ' ' ? '\u00A0' : char; // Boşlukları korumak için
-                span.style.animationDelay = `${index * 0.08}s`; // Her harf 80ms arayla
+                span.style.animationDelay = `${index * 0.04}s`; // Her harf 40ms arayla
                 typewriterElement.appendChild(span);
             });
         });
