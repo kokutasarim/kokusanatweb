@@ -65,8 +65,6 @@
             width: 80%; /* Boyutu %20 azalt */
             height: auto;
             max-width: 80%;
-            margin: 0 auto;
-            display: block;
         }
 
         .banner .image img:hover {
@@ -74,11 +72,15 @@
             transform: scale(1.02);
         }
 
-        /* Banner konteyner ortalama */
+        /* Banner konteyner ortalama - text-align yöntemi */
         .banner .image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            text-align: center;
+            width: 100%;
+        }
+
+        .banner .image img {
+            margin: 0 !important;
+            display: inline-block !important;
         }
 
         /* Spotlight resimleri kalite artırma */
