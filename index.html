@@ -34,8 +34,121 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;700&display=swap');
         
+        /* Navbar Stilleri */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(0,0,0,0.1);
+            backdrop-filter: blur(15px);
+            padding: 15px 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #f6eeee;
+            letter-spacing: 1px;
+            margin-right: auto;
+        }
+        
+        .logo-sanat {
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
+        }
+        
+        #menuToggle {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            height: 40px;
+            padding: 8px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            margin-left: auto;
+        }
+        
+        .menu-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .menu-bar {
+            width: 22px;
+            height: 3px;
+            background: linear-gradient(45deg, #f6eeee, #d4af37);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        
+        .menu-text {
+            font-size: 1.1em;
+            font-weight: 500;
+            color: #f6eeee;
+            letter-spacing: 0.5px;
+        }
+        
+        #mobileMenu {
+            position: absolute;
+            top: 100%;
+            left: -60px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(20px);
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            min-width: 200px;
+            display: none;
+        }
+        
+        .menu-list {
+            list-style: none;
+            margin: 0;
+            padding: 15px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .menu-item {
+            display: block;
+            padding: 12px 25px;
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05em;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            margin: 0 10px;
+        }
+        
+        .menu-item:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateX(5px);
+        }
+
+        /* Typewriter Efekti */
         .typewriter {
             font-family: 'Great Vibes', cursive !important;
+            font-size: 1.8em !important;
+            font-weight: normal;
+            line-height: 1.4;
+            margin-bottom: 30px;
             overflow: hidden;
         }
         
@@ -55,50 +168,48 @@
             }
         }
 
-        /* Mobil görünümde menü sağa hizalama */
+        /* Mobil Responsive */
         @media (max-width: 768px) {
-            #navbar > div {
-                padding: 0 10px !important;
-                justify-content: space-between !important;
+            .navbar-container {
+                padding: 0 10px;
+                justify-content: space-between;
             }
             
             #menuToggle {
-                margin-left: auto !important;
-                margin-right: 0 !important;
+                margin-left: auto;
+                margin-right: 0;
             }
             
-            /* Logo tam sola yasla */
-            #navbar > div > div:first-child {
-                margin-right: 0 !important;
-                margin-left: 0 !important;
+            .logo {
+                margin-right: 0;
+                margin-left: 0;
             }
             
-            /* Navbar padding'ini azalt */
             #navbar {
-                padding: 10px 5px !important;
+                padding: 10px 5px;
             }
         }
     </style>
 </head>
 <body class="is-preload">
     <!-- Menü Barı -->
-    <nav id="navbar" style="position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,0,0,0.1);backdrop-filter:blur(15px);padding:15px 30px;transition:all 0.3s ease;">
-        <div style="display:flex;align-items:center;justify-content:space-between;max-width:100%;margin:0 auto;padding:0 20px;">
-            <div style="font-size:1.2em;font-weight:bold;color:#f6eeee;letter-spacing:1px;margin-right:auto;">
-                KOKU <span style="font-family:'Dancing Script', cursive;font-weight:700;">SANAT</span>
+    <nav id="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                KOKU <span class="logo-sanat">SANAT</span>
             </div>
-            <div id="menuToggle" style="cursor:pointer;display:flex;flex-direction:row;align-items:center;gap:10px;height:40px;padding:8px 20px;border-radius:8px;transition:all 0.3s ease;position:relative;margin-left:auto;">
-                <div style="display:flex;flex-direction:column;gap:4px;">
-                    <span style="width:22px;height:3px;background:linear-gradient(45deg,#f6eeee,#d4af37);border-radius:2px;transition:all 0.3s ease;"></span>
-                    <span style="width:22px;height:3px;background:linear-gradient(45deg,#f6eeee,#d4af37);border-radius:2px;transition:all 0.3s ease;"></span>
-                    <span style="width:22px;height:3px;background:linear-gradient(45deg,#f6eeee,#d4af37);border-radius:2px;transition:all 0.3s ease;"></span>
+            <div id="menuToggle">
+                <div class="menu-bars">
+                    <span class="menu-bar"></span>
+                    <span class="menu-bar"></span>
+                    <span class="menu-bar"></span>
                 </div>
-                <span style="font-size:1.1em;font-weight:500;color:#f6eeee;letter-spacing:0.5px;">MENÜ</span>
-                <div id="mobileMenu" style="position:absolute;top:100%;right:0;background:rgba(255,255,255,0.15);backdrop-filter:blur(20px);border-radius:15px;box-shadow:0 15px 35px rgba(0,0,0,0.1);border:1px solid rgba(255,255,255,0.2);min-width:200px;">
-                    <ul style="list-style:none;margin:0;padding:15px 0;display:flex;flex-direction:column;gap:5px;">
-                        <li><a href="parfümler.html" style="display:block;padding:12px 25px;color:#2c3e50;text-decoration:none;font-weight:500;font-size:1.05em;transition:all 0.3s ease;border-radius:8px;margin:0 10px;">🌸 Parfümler</a></li>
-                        <li><a href="xparfümler.html" style="display:block;padding:12px 25px;color:#2c3e50;text-decoration:none;font-weight:500;font-size:1.05em;transition:all 0.3s ease;border-radius:8px;margin:0 10px;">❌ X Parfümler</a></li>
-                        <li><a href="#iletisim" style="display:block;padding:12px 25px;color:#2c3e50;text-decoration:none;font-weight:500;font-size:1.05em;transition:all 0.3s ease;border-radius:8px;margin:0 10px;">📧 İletişim</a></li>
+                <span class="menu-text">MENÜ</span>
+                <div id="mobileMenu">
+                    <ul class="menu-list">
+                        <li><a href="parfümler.html" class="menu-item">🌸 Parfümler</a></li>
+                        <li><a href="xparfümler.html" class="menu-item">❌ X Parfümler</a></li>
+                        <li><a href="#iletisim" class="menu-item">📧 İletişim</a></li>
                     </ul>
                 </div>
             </div>
@@ -110,7 +221,7 @@
         <!-- One -->
         <section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right" style="padding-top:80px;">
             <div class="content">
-                <p class="major typewriter" style="font-family:'Great Vibes', cursive !important;font-size:1.8em;font-weight:normal;line-height:1.4;margin-bottom:30px;"></p>
+                <p class="major typewriter"></p>
                 <ul class="actions stacked">
                     <li><a id="tanisalimBtn" class="button big wide smooth-scroll-middle">Tanışalım</a></li>
                 </ul>
@@ -161,11 +272,13 @@
         <section class="wrapper style1 align-center" id="iletisim">
             <div class="inner medium">
                 <h2>İletişim</h2>
-                <form method="POST" action="https://formsubmit.co/kokutasarim@gmail.com">
+                <form method="POST" action="https://formsubmit.co/kokutasarim@gmail.com" novalidate>
+                    <input type="hidden" name="_next" value="https://kokusanat.vercel.app">
+                    <input type="hidden" name="_subject" value="Koku Sanat - Yeni Mesaj">
                     <div class="fields">
                         <div class="field half">
                             <label for="name">İsim</label>
-                            <input type="text" name="name" id="name" required />
+                            <input type="text" name="name" id="name" required minlength="2" />
                         </div>
                         <div class="field half">
                             <label for="email">Email</label>
@@ -173,7 +286,7 @@
                         </div>
                         <div class="field">
                             <label for="message">Mesaj</label>
-                            <textarea name="message" id="message" rows="6" required></textarea>
+                            <textarea name="message" id="message" rows="6" required minlength="10"></textarea>
                         </div>
                     </div>
                     <ul class="actions special">
@@ -206,62 +319,60 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- Scroll ve Menü Hover Script -->
+    <!-- Custom Scripts -->
     <script>
-        // Tanışalım butonuna tıklayınca kaydır
-        document.getElementById('tanisalimBtn').addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.getElementById('first');
-            const y = target.getBoundingClientRect().top + window.pageYOffset + 60;
-            window.scrollTo({ top: y, behavior: 'smooth' });
-        });
-
-        // Menü Hover Davranışı
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        menuToggle.addEventListener('mouseenter', () => {
-            mobileMenu.style.display = 'block';
-        });
-
-        menuToggle.addEventListener('mouseleave', () => {
-            setTimeout(() => {
-                if (!menuToggle.matches(':hover') && !mobileMenu.matches(':hover')) {
-                    mobileMenu.style.display = 'none';
-                }
-            }, 100);
-        });
-
-        mobileMenu.addEventListener('mouseenter', () => {
-            mobileMenu.style.display = 'block';
-        });
-
-        mobileMenu.addEventListener('mouseleave', () => {
-            if (!menuToggle.matches(':hover')) {
-                mobileMenu.style.display = 'none';
-            }
-        });
-
-        // Menüdeki bağlantıya tıklanınca menü kapansın
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.onclick = () => {
-                mobileMenu.style.display = 'none';
-            };
-        });
-
-        // Harflerin tek tek belirmesi efekti
         document.addEventListener('DOMContentLoaded', function() {
-            const text = "Geçmiş dönemlerin unutulmaz kokuları";
+            // Elemanları cache'le
+            const tanisalimBtn = document.getElementById('tanisalimBtn');
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
             const typewriterElement = document.querySelector('.typewriter');
-            
-            // Metni temizle
+            const target = document.getElementById('first');
+
+            // Tanışalım butonu scroll fonksiyonu
+            tanisalimBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const y = target.getBoundingClientRect().top + window.pageYOffset + 60;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+            });
+
+            // Menü açma/kapama fonksiyonları
+            let hideTimeout;
+
+            function showMenu() {
+                clearTimeout(hideTimeout);
+                mobileMenu.style.display = 'block';
+            }
+
+            function hideMenu() {
+                hideTimeout = setTimeout(() => {
+                    if (!menuToggle.matches(':hover') && !mobileMenu.matches(':hover')) {
+                        mobileMenu.style.display = 'none';
+                    }
+                }, 100);
+            }
+
+            // Event listener'ları ekle
+            menuToggle.addEventListener('mouseenter', showMenu);
+            menuToggle.addEventListener('mouseleave', hideMenu);
+            mobileMenu.addEventListener('mouseenter', showMenu);
+            mobileMenu.addEventListener('mouseleave', hideMenu);
+
+            // Menü linklerine tıklandığında menüyü kapat
+            mobileMenu.querySelectorAll('.menu-item').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.style.display = 'none';
+                });
+            });
+
+            // Typewriter efekti
+            const text = "Geçmiş dönemlerin unutulmaz kokuları";
             typewriterElement.innerHTML = '';
             
-            // Her harfi span içine al
             text.split('').forEach((char, index) => {
                 const span = document.createElement('span');
-                span.textContent = char === ' ' ? '\u00A0' : char; // Boşlukları korumak için
-                span.style.animationDelay = `${index * 0.04}s`; // Her harf 40ms arayla
+                span.textContent = char === ' ' ? '\u00A0' : char;
+                span.style.animationDelay = `${index * 0.04}s`;
                 typewriterElement.appendChild(span);
             });
         });
