@@ -190,6 +190,68 @@
             margin-top: 6px;
             font-weight: 600;
         }
+        
+        /* Mobil responsive tasarım */
+        @media screen and (max-width: 768px) {
+            .products {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+            
+            .products .product {
+                width: 280px;
+                padding: 25px 20px;
+            }
+            
+            .products .product h2 {
+                font-size: 1.6rem;
+                margin: 12px 0 16px 0;
+            }
+            
+            .products .product img {
+                margin-bottom: 16px;
+            }
+            
+            .product-img {
+                width: 200px !important;
+            }
+            
+            .products .product p {
+                font-size: 1.05rem;
+                line-height: 1.5;
+            }
+            
+            .retro-footer {
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                margin-top: 0;
+                z-index: 1000;
+            }
+            
+            body {
+                padding-bottom: 80px;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .retro-header {
+                font-size: 2.5rem;
+                margin: 20px 0 30px 0;
+            }
+            
+            .retro-header::before,
+            .retro-header::after {
+                display: none;
+            }
+            
+            .products .product {
+                width: 320px;
+                max-width: 90vw;
+            }
+        }
     </style>
 </head>
 <body>
@@ -198,12 +260,12 @@
     <div class="products">
         <div class="product">
             <h2>Sentez 1920</h2>
-            <img src="images/parfum1.jpg" alt="Klasik Parfüm" style="width:140px;">
+            <img src="images/parfum1.jpg" alt="Klasik Parfüm" style="width:140px;" class="product-img">
             <p>1920'lerin eşsiz kokusu, zamansız bir klasik.</p>
         </div>
         <div class="product">
             <h2>Sentez 1950</h2>
-            <img src="images/parfum2.jpg" alt="Modern Parfüm" style="width:140px;">
+            <img src="images/parfum2.jpg" alt="Modern Parfüm" style="width:140px;" class="product-img">
             <p>1950'lerin modern dokunuşlarıyla hazırlanmış özel bir parfüm.</p>
         </div>
     </div>
