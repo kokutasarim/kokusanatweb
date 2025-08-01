@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>X Parfümler - Koku Sanat</title>
     
     <!-- Favicon and Icons -->
@@ -197,51 +198,66 @@
         
         /* Mobil responsive tasarım */
         @media screen and (max-width: 768px) {
+            body {
+                padding: 10px !important;
+                padding-bottom: 100px !important;
+            }
+            
             .products {
-                flex-direction: column;
-                align-items: center;
-                gap: 30px;
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 40px !important;
+                margin-bottom: 20px !important;
             }
             
             .products .product {
-                width: 280px !important;
-                padding: 25px 20px !important;
+                width: 90vw !important;
+                max-width: 350px !important;
+                padding: 30px 25px !important;
+                margin: 0 auto !important;
             }
             
             .products .product h2 {
-                font-size: 1.6rem !important;
-                margin: 12px 0 16px 0 !important;
-            }
-            
-            .products .product img {
-                margin-bottom: 16px !important;
+                font-size: 2rem !important;
+                margin: 15px 0 20px 0 !important;
             }
             
             .product-img {
-                width: 200px !important;
+                width: 250px !important;
+                height: auto !important;
             }
             
             .products .product p {
-                font-size: 1.05rem !important;
-                line-height: 1.5 !important;
+                font-size: 1.2rem !important;
+                line-height: 1.6 !important;
+                margin-top: 15px !important;
+            }
+            
+            .retro-header {
+                font-size: 2.8rem !important;
+                margin: 20px 0 30px 0 !important;
             }
             
             .retro-footer {
                 position: fixed !important;
-                bottom: 20px !important;
+                bottom: 15px !important;
                 left: 50% !important;
                 transform: translateX(-50%) !important;
-                margin-top: 0 !important;
-                z-index: 1000 !important;
-                animation: fadeInUp 0.8s ease-out 1.1s forwards !important;
+                margin: 0 !important;
+                z-index: 9999 !important;
+                width: auto !important;
+                max-width: 200px !important;
+                padding: 12px 20px !important;
+                animation: none !important;
+                opacity: 1 !important;
             }
             
-            body {
-                padding-bottom: 80px !important;
+            .retro-footer a {
+                font-size: 1rem !important;
             }
             
-            .products .product:hover {
-                transform: translateY(-3px) !important;
+            .footer-text {
+                font-size: 0.8rem !important;
             }
         }
         
