@@ -1,0 +1,356 @@
+/* Menü Stilleri */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.1);
+    backdrop-filter: blur(15px);
+    padding: 15px 30px;
+    transition: all 0.3s ease;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #f6eeee;
+    letter-spacing: 1px;
+    margin-right: auto;
+}
+
+.logo-sanat {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+}
+
+#menuToggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 40px;
+    padding: 8px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    margin-left: auto;
+}
+
+.menu-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.menu-bar {
+    width: 22px;
+    height: 3px;
+    background: linear-gradient(45deg, #f6eeee, #d4af37);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.menu-text {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #f6eeee;
+    letter-spacing: 0.5px;
+}
+
+#mobileMenu {
+    position: absolute;
+    top: 100%;
+    left: -60px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    min-width: 200px;
+    display: none;
+}
+
+.menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-item {
+    display: block;
+    padding: 12px 25px;
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.05em;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    margin: 0 10px;
+}
+
+.menu-item:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateX(5px);
+}
+
+.typewriter {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: 1.8em !important;
+    font-weight: normal;
+    line-height: 1.4;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.typewriter span {
+    opacity: 0;
+    animation: fadeInLetter 0.1s ease-in-out forwards;
+}
+
+@keyframes fadeInLetter {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .navbar-container { padding: 0 10px; }
+    #menuToggle { margin-left: auto; margin-right: 0; }
+    .logo { font-size: 1.1em; }
+    #navbar { padding: 10px 5px; }
+    #mobileMenu { left: auto; right: -10px; min-width: 180px; }
+    .typewriter { font-size: 1.5em !important; }
+}
+
+@media (max-width: 480px) {
+    .logo { font-size: 1em; }
+    .typewriter { font-size: 1.3em !important; }
+    #navbar { padding: 8px 5px; }
+    .navbar-container { padding: 0 5px; }
+}
+
+/* Buton hover stillerini kırmızıya çevirme */
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+button:hover,
+.button:hover {
+    box-shadow: inset 0 0 0 1px #E53E3E !important;
+    color: #E53E3E !important;
+}
+
+input[type="submit"].primary:hover,
+input[type="reset"].primary:hover,
+input[type="button"].primary:hover,
+button.primary:hover,
+.button.primary:hover {
+    background-color: #E53E3E !important;
+}
+
+.gallery.style1 input[type="submit"]:hover,
+.gallery.style1 input[type="reset"]:hover,
+.gallery.style1 input[type="button"]:hover,
+.gallery.style1 button:hover,
+.gallery.style1 .button:hover {
+    box-shadow: inset 0 0 0 1px #E53E3E !important;
+    color: #E53E3E !important;
+}
+
+.gallery.style1 input[type="submit"].primary:hover,
+.gallery.style1 input[type="reset"].primary:hover,
+.gallery.style1 input[type="button"].primary:hover,
+.gallery.style1 button.primary:hover,
+.gallery.style1 .button.primary:hover {
+    background-color: #E53E3E !important;
+}
+
+.gallery.style2 input[type="submit"]:hover,
+.gallery.style2 input[type="reset"]:hover,
+.gallery.style2 input[type="button"]:hover,
+.gallery.style2 button:hover,
+.gallery.style2 .button:hover {
+    box-shadow: inset 0 0 0 1px #E53E3E !important;
+    color: #E53E3E !important;
+}
+
+.gallery.style2 input[type="submit"].primary:hover,
+.gallery.style2 input[type="reset"].primary:hover,
+.gallery.style2 input[type="button"].primary:hover,
+.gallery.style2 button.primary:hover,
+.gallery.style2 .button.primary:hover {
+    background-color: #E53E3E !important;
+}
+
+#wrapper > .invert input[type="submit"]:hover,
+#wrapper > .invert input[type="reset"]:hover,
+#wrapper > .invert input[type="button"]:hover,
+#wrapper > .invert button:hover,
+#wrapper > .invert .button:hover {
+    box-shadow: inset 0 0 0 1px #E53E3E !important;
+    color: #E53E3E !important;
+}
+
+#wrapper > .invert input[type="submit"].primary:hover,
+#wrapper > .invert input[type="reset"].primary:hover,
+#wrapper > .invert input[type="button"].primary:hover,
+#wrapper > .invert button.primary:hover,
+#wrapper > .invert .button.primary:hover {
+    background-color: #E53E3E !important;
+}
+
+/* Banner görüntüsü sağdan kayarak gelme animasyonu */
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Banner animasyonu - daha yumuşak yaklaşım */
+.banner .image {
+    animation: slideInFromRight 2s ease-out forwards;
+}
+
+/* Banner görüntüsünün arka planını şeffaf yap */
+.banner .image img {
+    background: transparent !important;
+    background-color: transparent !important;
+    mix-blend-mode: multiply;
+}
+
+/* Banner container'ının da arka planını şeffaf yap */
+.banner .image {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* Responsive Images - Duyarlı Resim Ayarları */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Banner resmi için özel responsive ayarlar */
+.banner .image img {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Spotlight resimleri için responsive ayarlar */
+.spotlight .image img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+}
+
+/* Parfüm ürün resimleri için responsive ayarlar */
+.product-card img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Mobil cihazlar için özel ayarlar */
+@media (max-width: 768px) {
+    .banner .image img {
+        max-height: 400px;
+        object-fit: cover;
+    }
+    
+    .spotlight .image img {
+        max-height: 250px;
+        margin-bottom: 20px;
+    }
+    
+    .product-card img {
+        max-height: 200px;
+    }
+}
+
+/* Küçük mobil cihazlar için */
+@media (max-width: 480px) {
+    .banner .image img {
+        max-height: 300px;
+    }
+    
+    .spotlight .image img {
+        max-height: 200px;
+    }
+    
+    .product-card img {
+        max-height: 150px;
+    }
+}
+
+/* Tablet cihazlar için */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .banner .image img {
+        max-height: 500px;
+    }
+    
+    .spotlight .image img {
+        max-height: 350px;
+    }
+}
+
+/* Büyük ekranlar için */
+@media (min-width: 1200px) {
+    .banner .image img {
+        max-height: 700px;
+    }
+    
+    .spotlight .image img {
+        max-height: 450px;
+    }
+}
+
+/* Lazy loading desteği */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* Resim yükleme animasyonu */
+@keyframes imageLoad {
+    from {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.image-loaded {
+    animation: imageLoad 0.5s ease-out;
+}
