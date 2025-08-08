@@ -8,6 +8,10 @@
     <meta name="description" content="Geçmiş dönemlerin unutulmaz kokularından günümüzün niş kokularına uzanan yolculuk.">
     <meta name="keywords" content="parfüm, koku, zamansız parfümler, vintage parfüm, nostaljik kokular">
     
+    <!-- Accessibility meta tags -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    
     <!-- Browser specific meta tags -->
     <meta name="format-detection" content="telephone=no">
     <meta name="HandheldFriendly" content="true">
@@ -44,7 +48,9 @@
     <meta name="msapplication-TileImage" content="images/favicon-48x48.png">
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:300,300i,400,400i&family=Great+Vibes&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/main.css">
@@ -86,7 +92,7 @@
                 </ul>
             </div>
             <div class="image">
-                <img src="images/banner.png" alt="Koku Banner" loading="lazy" class="responsive-img">
+                <img src="images/banner.png" alt="Koku Banner" loading="lazy" class="responsive-img" width="800" height="600">
             </div>
         </section>
 
@@ -100,7 +106,7 @@
                 </ul>
             </div>
             <div class="image">
-                <img src="images/spotlight01.jpg" alt="Vintage parfüm şişeleri" loading="lazy" class="responsive-img">
+                <img src="images/spotlight01.jpg" alt="Vintage parfüm şişeleri" loading="lazy" class="responsive-img" width="600" height="400">
             </div>
         </section>
 
@@ -114,7 +120,7 @@
                 </ul>
             </div>
             <div class="image">
-                <img src="images/spotlight02.jpg" alt="Modern X parfüm koleksiyonu" loading="lazy" class="responsive-img">
+                <img src="images/spotlight02.jpg" alt="Modern X parfüm koleksiyonu" loading="lazy" class="responsive-img" width="600" height="400">
             </div>
         </section>
 
@@ -127,16 +133,16 @@
                     <input type="hidden" name="_subject" value="Koku - Yeni Mesaj">
                     <div class="fields">
                         <div class="field half">
-                            <label for="name">İsim</label>
-                            <input type="text" name="name" id="name" required>
+                            <label for="name">İsim *</label>
+                            <input type="text" name="name" id="name" required aria-required="true">
                         </div>
                         <div class="field half">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" id="email" required>
+                            <label for="email">Email *</label>
+                            <input type="email" name="email" id="email" required aria-required="true">
                         </div>
                         <div class="field">
-                            <label for="message">Mesaj</label>
-                            <textarea name="message" id="message" rows="6" required></textarea>
+                            <label for="message">Mesaj *</label>
+                            <textarea name="message" id="message" rows="6" required aria-required="true"></textarea>
                         </div>
                     </div>
                     <ul class="actions special">
@@ -162,11 +168,6 @@
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
 
     <script>
@@ -261,9 +262,25 @@
                 // Fallback for older browsers
                 lazyImages.forEach(img => img.classList.add('loaded'));
             }
+            
+            // Load remaining scripts after page load (non-critical)
+            setTimeout(() => {
+                const scripts = [
+                    'assets/js/jquery.scrollex.min.js',
+                    'assets/js/jquery.scrolly.min.js',
+                    'assets/js/browser.min.js',
+                    'assets/js/breakpoints.min.js',
+                    'assets/js/util.js'
+                ];
+                
+                scripts.forEach(src => {
+                    const script = document.createElement('script');
+                    script.src = src;
+                    script.async = true;
+                    document.head.appendChild(script);
+                });
+            }, 1500);
         });
     </script>
 </body>
 </html>
-
-
