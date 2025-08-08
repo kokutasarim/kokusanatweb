@@ -1,6 +1,6 @@
 {
-    "name": "Koku Sanat - Zamansız Parfümler",
-    "short_name": "Koku Sanat",
+    "name": "Koku",
+    "short_name": "Koku",
     "description": "Geçmiş dönemlerin unutulmaz kokularını keşfedin. Zamansız parfümlerin nostaljik dünyası.",
     "icons": [
         {
@@ -37,7 +37,7 @@
     ],
     "start_url": "/",
     "display": "standalone",
-    "theme_color": "#d4af37",
+    "theme_color": "#b85c38",
     "background_color": "#ffffff",
     "orientation": "portrait"
 }
