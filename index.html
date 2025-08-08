@@ -2,11 +2,16 @@
 <html lang="tr">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Koku Sanat | Zamansız Parfümler</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Koku | Zamansız Parfümler</title>
     
-    <meta name="description" content="Geçmiş dönemlerin unutulmaz kokularını keşfedin. Zamansız parfümlerin nostaljik dünyası.">
+    <meta name="description" content="Geçmiş dönemlerin unutulmaz kokularını keşfedin. Zamansız parfümlerin nostaljik dünyası - Koku.">
     <meta name="keywords" content="parfüm, koku, zamansız parfümler, vintage parfüm, nostaljik kokular">
+    
+    <!-- Browser specific meta tags -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="MobileOptimized" content="320">
     
     <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
@@ -18,6 +23,13 @@
     <meta name="theme-color" content="#b85c38">
     <meta name="msapplication-TileColor" content="#b85c38">
     <meta name="msapplication-TileImage" content="images/favicon-48x48.png">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="application-name" content="Koku">
+    <meta name="apple-mobile-web-app-title" content="Koku">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="mobile-web-app-capable" content="yes">
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
@@ -62,7 +74,7 @@
                 </ul>
             </div>
             <div class="image">
-                <img src="images/banner.png" alt="Koku Sanat Banner" loading="lazy" class="responsive-img">
+                <img src="images/banner.png" alt="Koku Banner" loading="lazy" class="responsive-img">
             </div>
         </section>
 
@@ -100,7 +112,7 @@
                 <h2>İletişim</h2>
                 <form method="POST" action="https://formsubmit.co/kokutasarim@gmail.com">
                     <input type="hidden" name="_next" value="https://kokusanat.vercel.app">
-                    <input type="hidden" name="_subject" value="Koku Sanat - Yeni Mesaj">
+                    <input type="hidden" name="_subject" value="Koku - Yeni Mesaj">
                     <div class="fields">
                         <div class="field half">
                             <label for="name">İsim</label>
@@ -148,7 +160,9 @@
     <script>
         // Service Worker
         if('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js');
+            navigator.serviceWorker.register('/sw.js').catch(function() {
+                // SW registration failed, continue without it
+            });
         }
         
         document.addEventListener('DOMContentLoaded', function() {
