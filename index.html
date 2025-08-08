@@ -13,6 +13,11 @@
     <meta name="HandheldFriendly" content="true">
     <meta name="MobileOptimized" content="320">
     
+    <!-- Cache control for immediate update -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
     <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
@@ -20,6 +25,11 @@
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <link rel="shortcut icon" type="image/png" href="images/favicon-48x48.png">
     <link rel="manifest" href="manifest.json">
+    
+    <!-- Fallback for manifest.json if not available -->
+    <meta name="msapplication-config" content="none">
+    <meta name="msapplication-starturl" content="/">
+    
     <meta name="theme-color" content="#b85c38">
     <meta name="msapplication-TileColor" content="#b85c38">
     <meta name="msapplication-TileImage" content="images/favicon-48x48.png">
@@ -30,6 +40,22 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- Opera specific meta tags -->
+    <meta name="opera-mini-optimize" content="yes">
+    <meta name="opera-turbo" content="off">
+    
+    <!-- Open Graph meta tags for social sharing and browsers -->
+    <meta property="og:title" content="Koku">
+    <meta property="og:site_name" content="Koku">
+    <meta property="og:description" content="Geçmiş dönemlerin unutulmaz kokularını keşfedin. Zamansız parfümlerin nostaljik dünyası.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kokusanat.vercel.app">
+    
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Koku">
+    <meta name="twitter:description" content="Geçmiş dönemlerin unutulmaz kokularını keşfedin. Zamansız parfümlerin nostaljik dünyası.">
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
