@@ -8,6 +8,12 @@
     <meta name="description" content="Geçmiş dönemlerin unutulmaz kokularından günümüzün niş kokularına uzanan yolculuk.">
     <meta name="keywords" content="parfüm, koku, zamansız parfümler, vintage parfüm, nostaljik kokular">
     
+    <!-- Security and Best Practices -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    
     <!-- Accessibility meta tags -->
     <meta name="color-scheme" content="light">
     <meta name="supported-color-schemes" content="light">
@@ -17,147 +23,84 @@
     <meta name="HandheldFriendly" content="true">
     <meta name="MobileOptimized" content="320">
     
-    <!-- Cache control for immediate update -->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    
     <!-- PWA Meta Tags -->
     <meta name="application-name" content="Koku">
     <meta name="apple-mobile-web-app-title" content="Koku">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     
-    <!-- Opera specific meta tags -->
-    <meta name="opera-mini-optimize" content="yes">
-    <meta name="mobile-web-app-title" content="Koku">
-    
     <!-- Open Graph meta tags -->
     <meta property="og:title" content="Koku">
     <meta property="og:site_name" content="Koku">
     
     <!-- Favicons -->
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48x48.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <link rel="shortcut icon" type="image/png" href="images/favicon-48x48.png">
     <link rel="manifest" href="manifest.json?v=2024080801">
     <meta name="theme-color" content="#b85c38">
-    <meta name="msapplication-TileColor" content="#b85c38">
-    <meta name="msapplication-TileImage" content="images/favicon-48x48.png">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:300,300i,400,400i&family=Great+Vibes&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- Resource Hints -->
     <link rel="dns-prefetch" href="//formsubmit.co">
     <link rel="prefetch" href="parfümler.html">
     <link rel="prefetch" href="xparfümler.html">
     <style>
-        /* Critical CSS - Above the fold */
-        body {
-            font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        body.is-preload * {
-            animation-delay: 0s !important;
-            animation-duration: 0s !important;
-        }
-        
-        /* Navbar Critical Styles */
-        #navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(0,0,0,0.1);
-            backdrop-filter: blur(15px);
-            padding: 15px 30px;
-            transition: all 0.3s ease;
-        }
-        .navbar-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 100%;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .logo {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #f6eeee;
-            letter-spacing: 1px;
-            margin-right: auto;
-        }
-        .logo-sanat {
-            font-family: 'Dancing Script', Georgia, serif;
-            font-weight: 700;
-        }
-        
-        /* Banner Critical Styles */
-        .banner {
-            padding-top: 80px !important;
-        }
-        .typewriter {
-            font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            min-height: 2em;
-        }
-        
-        /* Preload spinner */
-        body.is-preload::after {
-            content: '';
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            width: 2rem;
-            height: 2rem;
-            margin: -1rem 0 0 -1rem;
-            border: 2px solid transparent;
-            border-top: 2px solid #333;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            z-index: 10000;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+        /* Critical CSS */
+        body{font-family:'Source Sans Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;margin:0;padding:0;line-height:1.6}
+        body.is-preload *{animation-delay:0s!important;animation-duration:0s!important}
+        .banner .image{aspect-ratio:800/600;background:#f0f0f0}
+        .spotlight .image{aspect-ratio:600/400;background:#f0f0f0}
+        img{width:100%;height:100%;object-fit:cover}
+        #navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,0,0,0.1);backdrop-filter:blur(15px);padding:15px 30px;transition:all .3s ease;height:60px;box-sizing:border-box}
+        .navbar-container{display:flex;align-items:center;justify-content:space-between;max-width:100%;margin:0 auto;padding:0 20px;height:100%}
+        .logo{font-size:1.2em;font-weight:bold;color:#f6eeee;letter-spacing:1px;margin-right:auto}
+        .logo-sanat{font-family:'Dancing Script',Georgia,serif;font-weight:700}
+        .banner{padding-top:80px!important;min-height:100vh}
+        .typewriter{font-family:'Source Sans Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;min-height:2em;height:2em;display:block}
+        #menuToggle{width:100px;height:40px}
+        #mobileMenu{position:absolute;top:100%;right:0;display:none;min-width:200px}
+        .font-loaded body{font-family:'Source Sans Pro',-apple-system,BlinkMacSystemFont,sans-serif}
+        .font-loaded .logo-sanat{font-family:'Dancing Script',Georgia,serif}
+        .skip-link{position:absolute;top:-40px;left:6px;background:#000;color:#fff;padding:8px;text-decoration:none;z-index:10001;border-radius:4px}
+        .skip-link:focus{top:6px}
+        .error-message{display:block;color:#e74c3c;font-size:.9em;margin-top:4px;min-height:1.2em}
+        button:focus,input:focus,textarea:focus,a:focus,[tabindex]:focus{outline:2px solid #3498db;outline-offset:2px}
     </style>
     
     <!-- CSS -->
-    <link rel="preload" href="assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="assets/css/custom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="assets/css/main.css">
-        <link rel="stylesheet" href="assets/css/custom.css">
-    </noscript>
+    <script>
+        ['assets/css/main.css','assets/css/custom.css'].forEach((href,i)=>{
+            const link=document.createElement('link');
+            link.rel='stylesheet';link.href=href;
+            document.head.appendChild(link);
+        });
+    </script>
 </head>
 <body class="is-preload">
+    <!-- Skip Link for Accessibility -->
+    <a href="#first" class="skip-link" aria-label="Ana içeriğe geç">Ana içeriğe geç</a>
+    
     <!-- Menü Barı -->
-    <nav id="navbar">
+    <nav id="navbar" role="navigation" aria-label="Ana navigasyon">
         <div class="navbar-container">
             <div class="logo">
                 KOKU <span class="logo-sanat">SANAT</span>
             </div>
-            <div id="menuToggle">
-                <div class="menu-bars">
+            <div id="menuToggle" role="button" aria-haspopup="true" aria-expanded="false" aria-label="Menüyü aç/kapat" tabindex="0">
+                <div class="menu-bars" aria-hidden="true">
                     <span class="menu-bar"></span>
                     <span class="menu-bar"></span>
                     <span class="menu-bar"></span>
                 </div>
                 <span class="menu-text">MENÜ</span>
-                <div id="mobileMenu">
+                <div id="mobileMenu" role="menu" aria-hidden="true">
                     <ul class="menu-list">
-                        <li><a href="parfümler.html" class="menu-item">🌸 Parfümler</a></li>
-                        <li><a href="xparfümler.html" class="menu-item">❌ X Parfümler</a></li>
-                        <li><a href="#iletisim" class="menu-item">📧 İletişim</a></li>
+                        <li role="none"><a href="parfümler.html" class="menu-item" role="menuitem">🌸 Parfümler</a></li>
+                        <li role="none"><a href="xparfümler.html" class="menu-item" role="menuitem">❌ X Parfümler</a></li>
+                        <li role="none"><a href="#iletisim" class="menu-item" role="menuitem">📧 İletişim</a></li>
                     </ul>
                 </div>
             </div>
@@ -167,211 +110,272 @@
     <!-- Wrapper -->
     <div id="wrapper" class="divided">
         <!-- Banner -->
-        <section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right" style="padding-top:80px;">
+        <section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right" style="padding-top:80px;" role="banner" aria-label="Ana başlık bölümü">
             <div class="content">
-                <h1 class="major typewriter"></h1>
+                <h1 class="major typewriter" role="heading" aria-level="1" aria-live="polite"></h1>
                 <ul class="actions stacked">
-                    <li><a id="tanisalimBtn" class="button big wide smooth-scroll-middle">Tanışalım</a></li>
+                    <li><a id="tanisalimBtn" class="button big wide smooth-scroll-middle" role="button" aria-label="Tanışalım bölümüne git">Tanışalım</a></li>
                 </ul>
             </div>
-            <div class="image">
+            <div class="image" role="img" aria-label="Koku markası ana görseli">
                 <picture>
                     <source srcset="images/banner.webp" type="image/webp">
-                    <img src="images/banner.png" alt="Koku Banner" loading="eager" class="responsive-img" width="800" height="600">
+                    <img src="images/banner.png" alt="Koku Sanat - Vintage parfüm şişeleri ve zarif tasarım öğeleri içeren ana banner görseli" loading="eager" class="responsive-img" width="800" height="600">
                 </picture>
             </div>
         </section>
 
         <!-- Koku -->
-        <section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="first">
+        <section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="first" role="main" aria-labelledby="koku-heading">
             <div class="content">
-                <h2>Koku</h2>
+                <h2 id="koku-heading">Koku</h2>
                 <p>1920 ile 1950 yılları arasında kalan dönemi yansıtan zamansız kokular</p>
                 <ul class="actions stacked">
-                    <li><a href="parfümler.html" class="button">Parfümler</a></li>
+                    <li><a href="parfümler.html" class="button" aria-label="Parfümler sayfasına git">Parfümler</a></li>
                 </ul>
             </div>
-            <div class="image">
+            <div class="image" role="img" aria-label="Vintage parfüm koleksiyonu görseli">
                 <picture>
                     <source srcset="images/spotlight01.webp" type="image/webp">
-                    <img src="images/spotlight01.jpg" alt="Vintage parfüm şişeleri" loading="lazy" class="responsive-img" width="600" height="400">
+                    <img src="images/spotlight01.jpg" alt="1920-1950 dönemi vintage parfüm şişeleri koleksiyonu - kristal kapaklı klasik tasarım" loading="lazy" class="responsive-img" width="600" height="400">
                 </picture>
             </div>
         </section>
 
         <!-- Koku X -->
-        <section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
+        <section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in" role="complementary" aria-labelledby="koku-x-heading">
             <div class="content">
-                <h2>Koku X</h2>
+                <h2 id="koku-x-heading">Koku X</h2>
                 <p>Zamansız kokuların X versiyonları</p>
                 <ul class="actions stacked">
-                    <li><a href="xparfümler.html" class="button">X Parfümler</a></li>
+                    <li><a href="xparfümler.html" class="button" aria-label="X Parfümler sayfasına git">X Parfümler</a></li>
                 </ul>
             </div>
-            <div class="image">
+            <div class="image" role="img" aria-label="Modern X parfüm serisi görseli">
                 <picture>
                     <source srcset="images/spotlight02.webp" type="image/webp">
-                    <img src="images/spotlight02.jpg" alt="Modern X parfüm koleksiyonu" loading="lazy" class="responsive-img" width="600" height="400">
+                    <img src="images/spotlight02.jpg" alt="Koku X serisi - modern tasarım parfüm şişeleri, çağdaş minimalist yaklaşım" loading="lazy" class="responsive-img" width="600" height="400">
                 </picture>
             </div>
         </section>
 
         <!-- İletişim -->
-        <section class="wrapper style1 align-center" id="iletisim">
+        <section class="wrapper style1 align-center" id="iletisim" role="form" aria-labelledby="contact-heading">
             <div class="inner medium">
-                <h2>İletişim</h2>
-                <form method="POST" action="https://formsubmit.co/kokutasarim@gmail.com">
+                <h2 id="contact-heading">İletişim</h2>
+                <form method="POST" action="https://formsubmit.co/kokutasarim@gmail.com" novalidate aria-label="İletişim formu">
                     <input type="hidden" name="_next" value="https://kokusanat.vercel.app">
                     <input type="hidden" name="_subject" value="Koku - Yeni Mesaj">
                     <div class="fields">
                         <div class="field half">
                             <label for="name">İsim *</label>
-                            <input type="text" name="name" id="name" required aria-required="true">
+                            <input type="text" name="name" id="name" required aria-required="true" aria-describedby="name-error" autocomplete="name">
+                            <span id="name-error" class="error-message" role="alert" aria-live="polite"></span>
                         </div>
                         <div class="field half">
                             <label for="email">Email *</label>
-                            <input type="email" name="email" id="email" required aria-required="true">
+                            <input type="email" name="email" id="email" required aria-required="true" aria-describedby="email-error" autocomplete="email">
+                            <span id="email-error" class="error-message" role="alert" aria-live="polite"></span>
                         </div>
                         <div class="field">
                             <label for="message">Mesaj *</label>
-                            <textarea name="message" id="message" rows="6" required aria-required="true"></textarea>
+                            <textarea name="message" id="message" rows="6" required aria-required="true" aria-describedby="message-error"></textarea>
+                            <span id="message-error" class="error-message" role="alert" aria-live="polite"></span>
                         </div>
                     </div>
                     <ul class="actions special">
-                        <li><input type="submit" value="Gönder"></li>
+                        <li><input type="submit" value="Gönder" aria-label="İletişim formunu gönder"></li>
                     </ul>
                 </form>
             </div>
         </section>
 
         <!-- Footer -->
-        <footer class="wrapper style1 align-center">
+        <footer class="wrapper style1 align-center" role="contentinfo" aria-label="Site alt bilgileri">
             <div class="inner">
-                <ul class="icons">
-                    <li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
-                    <li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
-                    <li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
-                    <li><a href="#" class="icon brands style2 fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-                    <li><a href="#" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
+                <ul class="icons" role="list" aria-label="Sosyal medya linkleri">
+                    <li role="listitem"><a href="#" class="icon brands style2 fa-twitter" aria-label="Twitter sayfamızı ziyaret edin"><span class="label">Twitter</span></a></li>
+                    <li role="listitem"><a href="#" class="icon brands style2 fa-facebook-f" aria-label="Facebook sayfamızı ziyaret edin"><span class="label">Facebook</span></a></li>
+                    <li role="listitem"><a href="#" class="icon brands style2 fa-instagram" aria-label="Instagram sayfamızı ziyaret edin"><span class="label">Instagram</span></a></li>
+                    <li role="listitem"><a href="#" class="icon brands style2 fa-linkedin-in" aria-label="LinkedIn sayfamızı ziyaret edin"><span class="label">LinkedIn</span></a></li>
+                    <li role="listitem"><a href="mailto:kokutasarim@gmail.com" class="icon style2 fa-envelope" aria-label="Email ile iletişime geçin"><span class="label">Email</span></a></li>
                 </ul>
             </div>
         </footer>
     </div>
 
     <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/main.js"></script>
-
     <script>
         // Service Worker
-        if('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js');
+        'serviceWorker' in navigator && navigator.serviceWorker.register('/sw.js').catch(console.log);
+        
+        // Font loading
+        function loadFonts() {
+            if ('fonts' in document) {
+                Promise.all([
+                    new FontFace('Source Sans Pro', 'url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7lujVj9w.woff2)').load(),
+                    new FontFace('Dancing Script', 'url(https://fonts.gstatic.com/s/dancingscript/v15/If2cXTr6YS-zF4S-kcSWSVi_sxjsohD9F50Ruu7BMSoHTeA.woff2)').load(),
+                    new FontFace('Great Vibes', 'url(https://fonts.gstatic.com/s/greatvibes/v8/RWmMoKWR9v4ksMfaWd_JN-XCg6UKjA.woff2)').load()
+                ]).then(fonts => {
+                    fonts.forEach(font => document.fonts.add(font));
+                    document.documentElement.classList.add('font-loaded');
+                }).catch(console.log);
+            } else {
+                const link = document.createElement('link');
+                link.href = 'https://fonts.googleapis.com/css2?family=Source+Sans+Pro:300,300i,400,400i&family=Great+Vibes&family=Dancing+Script:wght@400;700&display=swap';
+                link.rel = 'stylesheet';
+                document.head.appendChild(link);
+            }
         }
         
         document.addEventListener('DOMContentLoaded', function() {
-            const tanisalimBtn = document.getElementById('tanisalimBtn');
-            const menuToggle = document.getElementById('menuToggle');
-            const mobileMenu = document.getElementById('mobileMenu');
-            const typewriter = document.querySelector('.typewriter');
-            const firstSection = document.getElementById('first');
+            setTimeout(loadFonts, 100);
             
-            // Tanışalım button
-            tanisalimBtn.addEventListener('click', function(e) {
+            const [tanisalimBtn, menuToggle, mobileMenu, typewriter, firstSection] = 
+                ['tanisalimBtn', 'menuToggle', 'mobileMenu', '.typewriter', 'first']
+                .map(id => document.querySelector(id.startsWith('.') ? id : `#${id}`));
+            
+            // Smooth scroll
+            tanisalimBtn?.addEventListener('click', e => {
                 e.preventDefault();
-                const targetTop = firstSection.getBoundingClientRect().top + window.pageYOffset + 60;
-                window.scrollTo({top: targetTop, behavior: 'smooth'});
+                window.scrollTo({
+                    top: firstSection.getBoundingClientRect().top + window.pageYOffset + 60,
+                    behavior: 'smooth'
+                });
             });
             
-            // Menu toggle
-            let hideTimeout;
-            let isMenuOpen = false;
-            
-            function showMenu() {
+            // Menu functionality
+            let hideTimeout, isMenuOpen = false;
+            const showMenu = () => {
                 clearTimeout(hideTimeout);
-                mobileMenu.style.display = 'block';
-                isMenuOpen = true;
-            }
-            
-            function hideMenu() {
+                if (mobileMenu) {
+                    mobileMenu.style.display = 'block';
+                    mobileMenu.setAttribute('aria-hidden', 'false');
+                    isMenuOpen = true;
+                }
+            };
+            const hideMenu = () => {
                 hideTimeout = setTimeout(() => {
-                    if (!menuToggle.matches(':hover') && !mobileMenu.matches(':hover')) {
+                    if (menuToggle && mobileMenu && !menuToggle.matches(':hover') && !mobileMenu.matches(':hover')) {
                         mobileMenu.style.display = 'none';
+                        mobileMenu.setAttribute('aria-hidden', 'true');
                         isMenuOpen = false;
                     }
                 }, 100);
+            };
+            
+            if (menuToggle) {
+                const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+                if (hasTouch) {
+                    menuToggle.addEventListener('touchstart', showMenu, {passive: true});
+                    menuToggle.addEventListener('touchend', () => setTimeout(hideMenu, 200), {passive: true});
+                } else {
+                    menuToggle.addEventListener('mouseenter', showMenu);
+                    menuToggle.addEventListener('mouseleave', hideMenu);
+                }
+                
+                menuToggle.addEventListener('keydown', e => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        isMenuOpen ? (hideMenu(), menuToggle.setAttribute('aria-expanded', 'false')) 
+                                  : (showMenu(), menuToggle.setAttribute('aria-expanded', 'true'));
+                    }
+                });
             }
             
-            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-            
-            if (isMobile) {
-                menuToggle.addEventListener('touchstart', showMenu);
-                menuToggle.addEventListener('touchend', function() {
-                    setTimeout(hideMenu, 200);
+            if (mobileMenu) {
+                mobileMenu.addEventListener('mouseenter', showMenu);
+                mobileMenu.addEventListener('mouseleave', hideMenu);
+                mobileMenu.setAttribute('aria-hidden', 'true');
+                mobileMenu.querySelectorAll('.menu-item').forEach(item => {
+                    item.addEventListener('click', () => {
+                        mobileMenu.style.display = 'none';
+                        mobileMenu.setAttribute('aria-hidden', 'true');
+                        isMenuOpen = false;
+                    });
                 });
-            } else {
-                menuToggle.addEventListener('mouseenter', showMenu);
-                menuToggle.addEventListener('mouseleave', hideMenu);
             }
-            
-            mobileMenu.addEventListener('mouseenter', showMenu);
-            mobileMenu.addEventListener('mouseleave', hideMenu);
-            
-            // Hide menu when clicking menu items
-            mobileMenu.querySelectorAll('.menu-item').forEach(item => {
-                item.addEventListener('click', () => {
-                    mobileMenu.style.display = 'none';
-                    isMenuOpen = false;
-                });
-            });
             
             // Typewriter effect
-            const text = "Geçmiş dönemlerin unutulmaz kokuları";
-            typewriter.innerHTML = '';
+            if (typewriter) {
+                const text = "Geçmiş dönemlerin unutulmaz kokuları";
+                typewriter.innerHTML = '';
+                text.split('').forEach((char, index) => {
+                    const span = document.createElement('span');
+                    span.textContent = char === ' ' ? '\u00A0' : char;
+                    span.style.animationDelay = `${index * 0.04}s`;
+                    typewriter.appendChild(span);
+                });
+            }
             
-            text.split('').forEach((char, index) => {
-                const span = document.createElement('span');
-                span.textContent = char === ' ' ? '\u00A0' : char;
-                span.style.animationDelay = `${index * 0.04}s`;
-                typewriter.appendChild(span);
-            });
-            
-            // Lazy loading for images
+            // Lazy loading
             const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-            
-            if ('IntersectionObserver' in window) {
+            if ('IntersectionObserver' in window && lazyImages.length > 0) {
                 const imageObserver = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
-                            const img = entry.target;
-                            img.classList.add('loaded');
-                            imageObserver.unobserve(img);
+                            entry.target.classList.add('loaded');
+                            imageObserver.unobserve(entry.target);
                         }
                     });
-                });
-                
+                }, { rootMargin: '50px' });
                 lazyImages.forEach(img => imageObserver.observe(img));
-            } else {
-                // Fallback for older browsers
-                lazyImages.forEach(img => img.classList.add('loaded'));
             }
             
-            // Load remaining scripts after page load (non-critical)
-            setTimeout(() => {
-                const scripts = [
-                    'assets/js/jquery.scrollex.min.js',
-                    'assets/js/jquery.scrolly.min.js',
-                    'assets/js/browser.min.js',
-                    'assets/js/breakpoints.min.js',
-                    'assets/js/util.js'
+            // Form validation
+            const form = document.querySelector('form');
+            form?.addEventListener('submit', e => {
+                let isValid = true;
+                document.querySelectorAll('.error-message').forEach(error => error.textContent = '');
+                
+                const fields = [
+                    ['name', 'İsim alanı zorunludur.'],
+                    ['email', 'Email alanı zorunludur.', 'Geçerli bir email adresi giriniz.'],
+                    ['message', 'Mesaj alanı zorunludur.']
                 ];
                 
-                scripts.forEach(src => {
-                    const script = document.createElement('script');
-                    script.src = src;
-                    script.async = true;
-                    document.head.appendChild(script);
+                fields.forEach(([id, required, invalid]) => {
+                    const field = document.getElementById(id);
+                    const value = field.value.trim();
+                    if (!value) {
+                        document.getElementById(`${id}-error`).textContent = required;
+                        isValid = false;
+                    } else if (id === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+                        document.getElementById(`${id}-error`).textContent = invalid;
+                        isValid = false;
+                    }
                 });
-            }, 1500);
+                
+                if (!isValid) {
+                    e.preventDefault();
+                    form.querySelector('.error-message:not(:empty)')?.previousElementSibling.focus();
+                }
+            });
+            
+            // Load non-critical scripts
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    ['jquery.min.js', 'main.js'].forEach((script, index) => {
+                        const s = document.createElement('script');
+                        s.src = `assets/js/${script}`;
+                        s.async = true;
+                        if (index === 1) {
+                            s.onload = () => {
+                                ['jquery.scrollex.min.js', 'jquery.scrolly.min.js', 'browser.min.js', 'breakpoints.min.js', 'util.js']
+                                .forEach(additionalScript => {
+                                    const as = document.createElement('script');
+                                    as.src = `assets/js/${additionalScript}`;
+                                    as.async = true;
+                                    document.head.appendChild(as);
+                                });
+                            };
+                        }
+                        document.head.appendChild(s);
+                    });
+                }, 500);
+            });
+            
+            setTimeout(() => document.body.classList.remove('is-preload'), 100);
         });
     </script>
 </body>
