@@ -63,6 +63,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Dancing+Script:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Dancing+Script:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet"></noscript>
     
     <!-- Resource Hints -->
     <link rel="dns-prefetch" href="//formsubmit.co">
@@ -161,10 +163,7 @@
                 </ul>
             </div>
             <div class="image" role="img" aria-label="Koku markası ana görseli">
-                <picture>
-                    <source srcset="images/banner.webp" type="image/webp">
-                    <img src="images/banner.png" alt="Koku Sanat - Vintage parfüm şişeleri ve zarif tasarım öğeleri içeren ana banner görseli" loading="eager" class="responsive-img" width="800" height="600">
-                </picture>
+                <img src="images/banner.png" alt="Koku Sanat - Vintage parfüm şişeleri ve zarif tasarım öğeleri içeren ana banner görseli" loading="eager" class="responsive-img" width="800" height="600">
             </div>
         </section>
 
@@ -178,10 +177,7 @@
                 </ul>
             </div>
             <div class="image" role="img" aria-label="Vintage parfüm koleksiyonu görseli">
-                <picture>
-                    <source srcset="images/spotlight01.webp" type="image/webp">
-                    <img src="images/spotlight01.jpg" alt="1920-1950 dönemi vintage parfüm şişeleri koleksiyonu - kristal kapaklı klasik tasarım" loading="lazy" class="responsive-img" width="600" height="400">
-                </picture>
+                <img src="images/spotlight01.jpg" alt="1920-1950 dönemi vintage parfüm şişeleri koleksiyonu - kristal kapaklı klasik tasarım" loading="lazy" class="responsive-img" width="600" height="400">
             </div>
         </section>
 
@@ -195,10 +191,7 @@
                 </ul>
             </div>
             <div class="image" role="img" aria-label="Modern X parfüm serisi görseli">
-                <picture>
-                    <source srcset="images/spotlight02.webp" type="image/webp">
-                    <img src="images/spotlight02.jpg" alt="Koku X serisi - modern tasarım parfüm şişeleri, çağdaş minimalist yaklaşım" loading="lazy" class="responsive-img" width="600" height="400">
-                </picture>
+                <img src="images/spotlight02.jpg" alt="Koku X serisi - modern tasarım parfüm şişeleri, çağdaş minimalist yaklaşım" loading="lazy" class="responsive-img" width="600" height="400">
             </div>
         </section>
 
@@ -254,21 +247,8 @@
         
         // Font loading
         function loadFonts() {
-            if ('fonts' in document) {
-                Promise.all([
-                    new FontFace('Source Sans Pro', 'url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7lujVj9w.woff2)').load(),
-                    new FontFace('Dancing Script', 'url(https://fonts.gstatic.com/s/dancingscript/v15/If2cXTr6YS-zF4S-kcSWSVi_sxjsohD9F50Ruu7BMSoHTeA.woff2)').load(),
-                    new FontFace('Great Vibes', 'url(https://fonts.gstatic.com/s/greatvibes/v8/RWmMoKWR9v4ksMfaWd_JN-XCg6UKjA.woff2)').load()
-                ]).then(fonts => {
-                    fonts.forEach(font => document.fonts.add(font));
-                    document.documentElement.classList.add('font-loaded');
-                }).catch(console.log);
-            } else {
-                const link = document.createElement('link');
-                link.href = 'https://fonts.googleapis.com/css2?family=Source+Sans+Pro:300,300i,400,400i&family=Great+Vibes&family=Dancing+Script:wght@400;700&display=swap';
-                link.rel = 'stylesheet';
-                document.head.appendChild(link);
-            }
+            // Fonts are now loaded via CSS link in head
+            document.documentElement.classList.add('font-loaded');
         }
         
         document.addEventListener('DOMContentLoaded', function() {
