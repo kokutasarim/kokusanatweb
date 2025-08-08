@@ -1,7 +1,14 @@
 {
     "name": "Koku",
     "short_name": "Koku",
-    "description": "Geçmiş dönemlerin unutulmaz kokularını keşfedin. Zamansız parfümlerin nostaljik dünyası.",
+    "description": "Zamansız parfümlerin nostaljik dünyası",
+    "version": "2.0.0",
+    "lang": "tr",
+    "dir": "ltr",
+    "scope": "/",
+    "id": "/",
+    "categories": ["lifestyle", "shopping"],
+    "display_override": ["standalone", "minimal-ui"],
     "icons": [
         {
             "src": "images/favicon-16x16.png",
